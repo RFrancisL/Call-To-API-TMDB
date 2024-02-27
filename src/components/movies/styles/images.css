@@ -1,0 +1,39 @@
+.div-images-images{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-bottom: 20px;
+}
+
+.images-image{
+    border-radius: 20px;
+}
+
+.prevButton, .nextButton{
+    width: 70px;
+    height: 30px;
+    margin: 10px;
+    background-color: #181818;
+    border: 1px solid #181818;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nextButton::before {
+    content: "\226B";
+    display: inline-block;
+    font-size: 30px;
+    margin-right: 5px; /* Ajusta el margen según tus necesidades */
+  }
+
+.prevButton::before{
+    content: "\226A";
+    display: inline-block;
+    font-size: 30px;
+    margin-right: 5px; 
+}
+
+.prevButton:hover::before, .nextButton:hover::before{
+    transition: 0.5s ease;
+    font-size: 40px;
+}

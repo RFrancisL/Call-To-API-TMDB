@@ -1,0 +1,63 @@
+.div-global-perfilDetails{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    border-radius: 30px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.div-semiglobal-perfilDetails{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3%;
+}
+
+.image-perfil{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.title-name-perfil{
+    font-size: 70px;
+}
+
+.title-userName-perfil{
+    font-size: 35px;
+}
+
+.div-favorites-movies, .div-favorites-series{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    background-color: #1d1d1d;
+    border: 1px solid #1d1d1d;
+    border-radius: 30px;
+}
+
+.div-movie, .div-serie{
+    padding: 20px;
+    text-align: center;
+}
+
+.image-movie-perfil, .image-serie-perfil{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.btn-remove-perfil{
+    width: 80px;
+    height: 30px;
+    border: 1px solid #1d1d1d;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-remove-perfil:hover{
+    transition: 0.5s ease;
+    background-color: rgb(192, 8, 8);
+}

@@ -1,0 +1,153 @@
+.nav-home{
+    background-color: #1d1c1c;
+    border-radius: 20px;
+    border: solid #1d1c1c;
+}
+
+.title-home{
+    text-align: center;
+}
+.cards{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+.movie-card, .serie-card{
+    width: 300px;
+    height: 420px;
+    background-color: #1d1c1c;
+    border: #1d1c1c;
+    border-radius: 15px;
+    padding: 50px;
+    color: #e5e3e3;
+    position: relative;
+    overflow: hidden;
+}
+.title-home{
+    margin: auto;
+    overflow: hidden; /* Oculta el desbordamiento del sombreado */
+    transition: box-shadow 0.3s ease;
+}
+
+.movie-card,
+.serie-card {
+    position: relative; /* Añade posición relativa para que el sombreado no afecte el diseño */
+    overflow: hidden; /* Oculta el desbordamiento del sombreado */
+    transition: box-shadow 0.3s ease; /* Agrega una transición suave al sombreado */
+}
+
+@keyframes borderAnimation {
+    0% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+    25% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    50% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5); /* Neon Orchid */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+    }
+    75% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    100% {
+        -webkit-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+}
+
+.btn-home{
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    background-color: #242424;
+    border: solid #242424;
+    border-radius: 20px;
+    cursor: pointer;    
+}
+
+.div-nav-perfil{
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+
+.title-nav{
+    margin: auto;
+}
+
+
+.btn-home-perfil{
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+    font-size: 20px;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    background-color: #242424;
+    border: solid #242424;
+    border-radius: 50%;
+    cursor: pointer;   
+}
+
+
+@keyframes textAnimation {
+    0% {
+        color: rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        text-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Shadow effect */
+    }
+    25% {
+        color: rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        text-shadow: 0 0 20px rgba(30, 144, 255, 0.5); /* Shadow effect */
+    }
+    50% {
+        color: rgba(218, 112, 214, 0.5); /* Neon Orchid */
+        text-shadow: 0 0 30px rgba(218, 112, 214, 0.5); /* Shadow effect */
+    }
+    75% {
+        color: rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        text-shadow: 0 0 20px rgba(30, 144, 255, 0.5); /* Shadow effect */
+    }
+    100% {
+        color: rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        text-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Shadow effect */
+    }
+}
+
+.card-title {
+    animation: textAnimation 2s infinite; 
+}
+
+
+.movie-card:hover,
+.serie-card:hover {
+    box-shadow: 20px 20px 20px 20px #1d1c1c;
+}
+
+.card-title{
+    margin-top: -40px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.image-home{
+    width: 300px;
+    border-radius: 20px;
+}
+
+.div-nav-btns-home{
+    display: flex;
+    justify-content: end;
+}

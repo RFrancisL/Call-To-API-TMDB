@@ -1,0 +1,18 @@
+.similar-div-semiglobal{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background: #181818;
+    padding: 20px;
+}
+
+.similar-div-semiglobal img{
+    border-radius: 20px;
+}
+
+.similar-movietitle{
+    font-size: 20px;
+}

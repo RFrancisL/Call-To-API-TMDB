@@ -1,0 +1,15 @@
+ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.div-app-login{
+    display: flex;
+    align-items: center;
+}

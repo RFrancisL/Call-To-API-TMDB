@@ -1,0 +1,23 @@
+.div-global-provders{
+    display: flex; 
+    margin: auto;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.provider{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.image-providers{
+    width: 50px;
+    border-radius: 50%;
+}
+.names-provider{
+    width: 70px;
+    font-size: 10px;
+    text-align: center;
+}

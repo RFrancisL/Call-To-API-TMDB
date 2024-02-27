@@ -1,0 +1,59 @@
+/* reviews.css */
+
+.global-reviews {
+    width: 90%;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px; /* Agregado para dar más espacio entre el contenido y los bordes */
+    gap: 20px; /* Espacio entre las tarjetas */
+  }
+  
+  .card-review {
+    width: 100%; /* Cambiado para ocupar el ancho completo del contenedor padre */
+    max-width: 300px; /* Agregado un máximo para que no se extienda demasiado */
+    background-color: #181818; 
+    border: 2px solid #303030;
+    border-radius: 30px; /* Agregado para esquinas redondeadas */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Alinear el contenido en columna */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card-review h1 {
+    margin-bottom: 10px;
+    font-size: 1.2em; 
+  }
+  
+  .card-review img {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-bottom: 10px;
+  }
+  
+  .card-review h3 {
+    margin: 5px 0;
+    font-size: 1em; 
+  }
+  
+  .content-review {
+    margin: 10px 0;
+    font-size: 0.9em; /* Ajustado el tamaño de la fuente para el contenido de la reseña */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Efecto de subrayado al pasar el ratón */
+  }
+  
+  /* Puedes agregar más estilos según tus preferencias */
+  

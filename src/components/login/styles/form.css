@@ -1,0 +1,80 @@
+@keyframes borderAnimation {
+    0% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+    25% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    50% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5); /* Neon Orchid */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+    }
+    75% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    100% {
+        -webkit-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+}
+
+.div-semiglobal-form{
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    background-color: #242424;
+    border-radius: 15px;
+    padding: 50px;
+    color: #e5e3e3;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20.5px 32px #1d1d1d;
+    -moz-box-shadow: 0 0 20.5px 32px #1d1d1d;
+    box-shadow: 0 0 20.5px 32px #1d1d1d;
+}
+
+.title-form{
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.btn-form{
+    padding: 10px;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+    font-size: 17px;
+    width: 170px;
+    height: 50px;
+    margin-top: 70px;
+    background-color: #242424;
+    border: solid #242424;
+    border-radius: 15px;
+    cursor: pointer;   
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input-form{
+    width: 380px;
+    height: 25px;
+    font-style: italic;
+    border: #1d1d1d;
+    border-radius: 5px;
+    animation: borderAnimation 2s infinite;
+}

@@ -1,0 +1,184 @@
+
+  
+  .details-movie{
+    display: flex;
+    margin: auto;
+    border: 1px solid #303030;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #181818;
+  }
+
+  .image-perfi-details{
+    width: max-content;
+    height: max-content;
+    margin: 20px;
+  }
+
+  .info-details{
+    padding: 50px;
+  }
+  .info-details h1 {
+    font-size: 70px;
+    color: #f1f1f1;
+  }
+
+  .info-details h3 {
+    font-size: 30px;
+    color: #adacac;
+    margin: 0px;
+  }
+
+  .info-details h5 {
+    font-size: 15px;
+  }
+  .details-details{
+    display: flex;
+    justify-content: space-around;
+    color: #adacac;
+    align-items: center;
+  }
+
+  .div-generes-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .info-details a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+
+  .links-details{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .homepage-link{
+    border: 1px solid #181818;
+    border-radius: 20px;
+    padding-left: 17%;
+    padding-right: 17%;
+    background-color: #181818;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+  .credits-link{
+    border: 1px solid #181818;
+    border-radius: 20px;
+    padding-left: 17%;
+    padding-right: 17%;
+    background-color: #181818;
+    color:#adacac;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+  .Image-details{
+    text-align: center;
+  }
+
+  .reviews{
+    background-color: #181818;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    text-align:center;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+
+  .similar-movies{
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 20px;
+    text-align:center;
+    margin: auto;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+
+  .watch-providers{
+    background-color: #181818;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align:center;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+
+  .recommendations-series{
+    background-color: #181818;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align:center;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+  }
+  .btn-show-more{
+    color: #f1f1f1;
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .btn-show-less{
+    color: #f1f1f1;
+    background-color: #181818;
+    border: 1px solid #303030;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .btn-show-less:hover{
+    background-color: rgb(192, 8, 8);
+  }
+  .btn-show-more:hover{
+    background-color: rgb(21, 123, 21);
+  }
+
+  @keyframes borderAnimation {
+    0% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+    25% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    50% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5); /* Neon Orchid */
+        -moz-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+    }
+    75% {
+        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+    }
+    100% {
+        -webkit-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
+        -moz-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+        box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+    }
+}
+
+
+  .btn-addToFavorites{
+    width: 100px;
+    height: 50px;
+    border: #181818;
+    border-radius: 20px;
+    background-color: #181818;
+    transition: box-shadow 0.3s ease; 
+    animation: borderAnimation 2s infinite;
+    cursor: pointer;
+  }
