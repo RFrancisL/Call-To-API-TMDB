@@ -4,32 +4,11 @@ import { Link } from "react-router-dom"
 import { AUTH } from "../../App"
 import { Carrousel } from "./nowPlaying"
 import '../movies/styles/similar.css'
+import useFetch from "../useFetchs"
 export default function SimilarMovies(){
     const { id } = useParams()
 
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    useEffect(()=>{
-        setLoading(true)
-
-        fetch(`https://api.themoviedb.org/3/movie/${id}/similar`, AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Alternative Titles')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.results)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[id])
+    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/movie/${id}/similar`)
 
     if(loading){
         return <h1>LOADING...</h1>
@@ -39,8 +18,7 @@ export default function SimilarMovies(){
         return <h1>{error}</h1>
     }
     
-    const movies = [...dataSuccess]
-    console.log(movies)
+    const movies = [success.results]
     return(
         <div>
             <div className="similar-div-semiglobal">

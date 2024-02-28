@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { API_KEY, AUTH, AUTHPOST } from "../../App"
+import { AUTH } from "../../App"
 import './styles/perfil.css'
 export default function DetailsAccount() {
     const getIdUser = localStorage.getItem('user')

@@ -1,33 +1,10 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Carrousel } from "../movies/nowPlaying"
-import { AUTH } from "../../App"
 import '../movies/styles/images.css'
+import useFetch from "../useFetchs"
+
 export default function AiringToday(){
-
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    useEffect(()=>{
-        setLoading(true)
-
-        fetch(`https://api.themoviedb.org/3/tv/airing_today`, AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Airing Today')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.results)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[])
+    const {success, loading, error} = useFetch('https://api.themoviedb.org/3/tv/airing_today')
 
     if(loading){
         return <h1>LOADING...</h1>
@@ -37,7 +14,7 @@ export default function AiringToday(){
         return <h1>{error}</h1>
     }
 
-    const series = [...dataSuccess]
+    const series = success.results || []
     
     return (
         <div>
@@ -49,7 +26,7 @@ export default function AiringToday(){
                     renderItem={(serie, containerClass, animationClass) => (
                         serie && (
                             <Link to={`${serie.id}`}><div key={serie.id} className={`cardMovie ${containerClass} ${animationClass}`}>
-                              <img src={`https://image.tmdb.org/t/p/w500${serie.backdrop_path}`} className="movie-image" />
+                              <img src={`https://image.tmdb.org/t/p/w500${serie.poster_path}`} className="movie-image" />
                               <h1 className="NowPlaying-movietitle">{serie.name}</h1>
                             </div></Link>
                         )

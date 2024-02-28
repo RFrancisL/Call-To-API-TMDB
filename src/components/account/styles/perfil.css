@@ -30,7 +30,7 @@
 
 .div-favorites-movies, .div-favorites-series{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 3%;
     background-color: #1d1d1d;

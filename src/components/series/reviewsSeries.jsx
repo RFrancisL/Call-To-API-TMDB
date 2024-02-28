@@ -1,33 +1,10 @@
-import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { AUTH } from "../../App"
 import '../movies/styles/reviews.css'
+import useFetch from "../useFetchs"
 export default function ReviewsSeries(){
     const { id } = useParams()
 
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    useEffect(()=>{
-        setLoading(true)
-
-        fetch(`https://api.themoviedb.org/3/tv/${id}/reviews`, AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Reviews Series')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.results)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[id])
+    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/tv/${id}/reviews`)
 
     if(loading){
         return <h1>LOADING...</h1>
@@ -39,10 +16,10 @@ export default function ReviewsSeries(){
     
     return (
         <div className="global-reviews">
-            {dataSuccess.length === 0 ? (
+            {success.length === 0 ? (
                 <h3>Reviews do NOT Exist!</h3>
             ):(
-                dataSuccess.map((review) => {
+                success.map((review) => {
                     return (
                         <div key={review.id} className="card-review">
                             <h1>{review.author}</h1>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import { AUTH } from "../../App"
 import '../movies/styles/images.css'
+import useFetch from "../useFetchs";
 
 function CarrouselImages({ item, renderItem }) {
     const [currentPosition, setCurrentPosition] = useState(0);
@@ -26,29 +27,7 @@ function CarrouselImages({ item, renderItem }) {
 export default function ImagesSeries(){
     const { id } = useParams()
 
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    useEffect(()=>{
-        setLoading(true)
-
-        fetch(`https://api.themoviedb.org/3/tv/${id}/images`, AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Images Series')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.backdrops)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[id])
+    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/tv/${id}/images`)
 
     if(loading){
         return <h1>LOADING...</h1>
@@ -58,7 +37,7 @@ export default function ImagesSeries(){
         return <h1>{error}</h1>
     }
     
-    const images = [...dataSuccess]
+    const images = success.backdrops || []
     
     return(
         <div>

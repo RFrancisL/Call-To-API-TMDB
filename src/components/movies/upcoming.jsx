@@ -2,32 +2,12 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { AUTH } from "../../App"
 import { Carrousel } from "./nowPlaying"
+import useFetch from "../useFetchs"
 
 
 export default function Upcoming(){
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-    
-    useEffect(()=>{
-        setLoading(true)
+    const {success, loading, error} = useFetch('https://api.themoviedb.org/3/movie/upcoming')
 
-        fetch('https://api.themoviedb.org/3/movie/upcoming', AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Top Rated')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.results)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[])
     if(loading){
         return <h1>LOADING...</h1>
     }
@@ -36,7 +16,8 @@ export default function Upcoming(){
         return <h1>{error}</h1>
     }
 
-    const movies = [...dataSuccess]
+    const movies = success.results || []
+
     return(
         <div>
             <h1>Upcoming</h1>
@@ -47,7 +28,7 @@ export default function Upcoming(){
                         movie && (
                           <Link to={`${movie.id}`} style={{textDecoration:'none', listStyle:'none'}}>
                             <div key={movie.id} className={`cardMovie ${containerClass} ${animationClass}`}>
-                              <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} className="movie-image" />
+                              <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="movie-image" />
                               <h1 className="NowPlaying-movietitle">{movie.title}</h1>
                             </div>
                           </Link>

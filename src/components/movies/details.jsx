@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import { AUTH, AUTHPOST } from "../../App"
+import { AUTH } from "../../App"
 import Images from "./images"
 import Reviews from "./reviews"
 import SimilarMovies from "./similar"
@@ -20,9 +20,6 @@ export default function DetailsMovie(){
 
     const [favorites, setFavorites] = useState([])
     const [star, setStar] = useState('☆')
-
-    const getIdUser = localStorage.getItem('user')
-    const idUser = JSON.parse(getIdUser)
 
     const getUserName = localStorage.getItem('valueUser')
     const getUserPassword = localStorage.getItem('valuePassword')

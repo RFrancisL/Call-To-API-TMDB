@@ -1,35 +1,12 @@
-import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 import { Link } from "react-router-dom"
-import { AUTH } from "../../App"
 import '../movies/styles/similar.css'
 import { Carrousel } from "../movies/nowPlaying"
+import useFetch from "../useFetchs"
 export default function Recommendations(){
     const { id } = useParams()
 
-    const [dataSuccess, setDataSuccess] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState('')
-
-    useEffect(()=>{
-        setLoading(true)
-
-        fetch(`https://api.themoviedb.org/3/tv/${id}/recommendations`, AUTH)
-            .then((res)=>{
-                if(!res.ok){
-                    throw new Error('Fetching ERROR Alternative Titles')
-                }
-                return res.json()
-            })
-            .then((data)=>{
-                setDataSuccess(data.results)
-                setLoading(false)
-            })
-            .catch((err)=>{
-                setError(err)
-                setLoading(false)
-            })
-    },[id])
+    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/tv/${id}/recommendations`)
 
     if(loading){
         return <h1>LOADING...</h1>
@@ -39,7 +16,7 @@ export default function Recommendations(){
         return <h1>{error}</h1>
     }
     
-    const series = [...dataSuccess]
+    const series = [...success]
     return(
         <div>
             <div className="similar-div-semiglobal">
