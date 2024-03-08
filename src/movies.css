@@ -1,0 +1,20 @@
+
+.div-semiglobal-moviesHome{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.div-movieHome{
+    width: 300px;
+    padding: 20px;
+}
+
+.img-movieHome{
+    width: 300px;
+}
+
+.title-movieHome{
+    text-align: center;
+    font-size: 17px;
+}

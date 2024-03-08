@@ -90,7 +90,6 @@ export default function DetailsMovie(){
         
     };
     
-
     return(
         <div className="global-details">
             <div key={dataSuccessMovie.id} className="info-details">

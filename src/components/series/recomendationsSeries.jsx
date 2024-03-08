@@ -16,7 +16,7 @@ export default function Recommendations(){
         return <h1>{error}</h1>
     }
     
-    const series = [...success]
+    const series = success.results || []
     return(
         <div>
             <div className="similar-div-semiglobal">

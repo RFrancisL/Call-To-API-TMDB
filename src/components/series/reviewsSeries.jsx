@@ -14,12 +14,14 @@ export default function ReviewsSeries(){
         return <h1>{error}</h1>
     }
     
+    const reviews = success.results || []
+    console.log(reviews)
     return (
         <div className="global-reviews">
-            {success.length === 0 ? (
+            {reviews.length === 0 ? (
                 <h3>Reviews do NOT Exist!</h3>
             ):(
-                success.map((review) => {
+                reviews.map((review) => {
                     return (
                         <div key={review.id} className="card-review">
                             <h1>{review.author}</h1>

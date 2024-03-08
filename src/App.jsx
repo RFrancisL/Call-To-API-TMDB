@@ -21,6 +21,8 @@ import Register from './components/login/register';
 import Logout from './components/login/logout';
 import YouAreNotLogued from './components/login/youAreNOTLogued';
 import Perfil from './components/account/perfil';
+import Movies from './components/movies';
+import Series from './components/series';
 
 export const API_KEY = '69d13bef26faaeec0d61f7925f5b502d'
 
@@ -50,8 +52,8 @@ function App() {
   })
 
   const USER = localStorage.getItem('user')
-  const user = JSON.parse(USER)
-
+  const user = JSON.parse(USER) || {}
+  
   const USERVALUE = localStorage.getItem('valueUser')
 
   return (
@@ -64,15 +66,8 @@ function App() {
               <Route index element={<Home/>}/>
               <Route path='/' element={<Layout/>}>
                   <Route path='/perfil' element={<Perfil/>}/>
-                  <Route path='/movies' element={
-                  <React.Fragment>
-                    <NowPlaying/> <Popular/> <TopRated/> <Upcoming/>
-                  </React.Fragment>}/>
-                  <Route path='/series' element={
-                    <React.Fragment>
-                      <AiringToday/> <OnTheAir/> <PopularSeries/> <TopRatedSeries/>
-                    </React.Fragment>
-                  }/>
+                  <Route path='/movies' element={<Movies/>}/>
+                  <Route path='/series' element={<Series/>}/>
                   <Route path='series/:id' element={<DetailsSeries/>}/>
                   <Route path='movies/:id' element={<DetailsMovie/>}/>
                   <Route path='movies/:id' element={<SimilarMovies/>}/>

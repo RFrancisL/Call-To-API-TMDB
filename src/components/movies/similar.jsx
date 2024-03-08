@@ -18,7 +18,8 @@ export default function SimilarMovies(){
         return <h1>{error}</h1>
     }
     
-    const movies = [success.results]
+    const movies = success.results || []
+    console.log(movies)
     return(
         <div>
             <div className="similar-div-semiglobal">

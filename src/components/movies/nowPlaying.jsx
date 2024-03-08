@@ -49,7 +49,6 @@ export default function NowPlaying() {
 
   //Me aseguro de que success.results no sea undefined o null antes de intentar acceder a sus propiedades. 
   const movies = success.results || []
-  console.log(movies)
   return (
     <div className="NowPlaying-div-global">
       <h1>Now Playing</h1>

@@ -41,22 +41,25 @@ export default function Images(){
     
     return(
         <div>
-            <CarrouselImages
-                item={images}
-                renderItem={(image) =>
-                    image ? (
-                        image.map((img, index) => (
-                            img && img.file_path ? (
-                                <img key={index} src={`https://image.tmdb.org/t/p/w500${img.file_path}`} className="images-image" />
+            {images ? (
+                <CarrouselImages
+                    item={images}
+                    renderItem={(image) =>
+                        image ? (
+                            image.map((img, index) => (
+                                img && img.file_path ? (
+                                    <img key={index} src={`https://image.tmdb.org/t/p/w500${img.file_path}`} className="images-image" />
+                                ) : null
+                            ))
+                        ) : (
+                            image && image.file_path ? (
+                                <img src={`https://image.tmdb.org/t/p/w500${image.file_path}`} className="images-image" />
                             ) : null
-                        ))
-                    ) : (
-                        image && image.file_path ? (
-                            <img src={`https://image.tmdb.org/t/p/w500${image.file_path}`} className="images-image" />
-                        ) : null
-                    )
-                }
-            />
+                        )
+                    }
+                />
+            ) : null
+        }
 
         </div>
     )
