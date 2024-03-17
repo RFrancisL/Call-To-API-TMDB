@@ -37,18 +37,12 @@ export function Carrousel({ item, renderItem }) {
 }
 
 export default function NowPlaying() {
-  const { success, loading, error } = useFetch('https://api.themoviedb.org/3/movie/now_playing')
+  const { success } = useFetch('https://api.themoviedb.org/3/movie/now_playing')
 
-  if (loading) {
-    return <h1>LOADING...</h1>
-  }
-
-  if (error) {
-    return <h1>{error}</h1>
-  }
 
   //Me aseguro de que success.results no sea undefined o null antes de intentar acceder a sus propiedades. 
-  const movies = success.results || []
+  const allSuccess = success || []
+  const movies = allSuccess.results || []
   return (
     <div className="NowPlaying-div-global">
       <h1>Now Playing</h1>

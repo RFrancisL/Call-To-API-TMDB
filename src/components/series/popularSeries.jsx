@@ -4,17 +4,10 @@ import useFetch from "../useFetchs"
 
 export default function PopularSeries(){
 
-    const {success, loading, error} = useFetch('https://api.themoviedb.org/3/tv/popular')
+    const {success} = useFetch('https://api.themoviedb.org/3/tv/popular')
 
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
-
-    const series = success.results || []
+    const allSuccess = success || []
+    const series = allSuccess.results || []
     
     return (
         <div>

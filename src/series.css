@@ -1,23 +1,24 @@
-
-.div-semiglobal-moviesHome{
+.div-semiglobal-seriesHome{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.div-movieHome{
+.div-serieHome{
     width: 300px;
     padding: 20px;
 }
 
-.img-movieHome{
+.img-serieHome{
     min-width: 300px;
     max-height: 400px;
 }
 
-.title-movieHome{
+.title-serieHome{
+    width: 300px;
     text-align: center;
     font-size: 17px;
+    margin-bottom: 60px;
 }
 
 .global-div-nav{

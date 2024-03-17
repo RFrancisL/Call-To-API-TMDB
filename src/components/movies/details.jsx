@@ -95,16 +95,15 @@ export default function DetailsMovie(){
             <div key={dataSuccessMovie.id} className="info-details">
                 <div className="details-movie">
                     <img src={`https://image.tmdb.org/t/p/w500${dataSuccessMovie.poster_path}`} className="image-perfi-details"/>
-                    <div>
+                    <div className="details-info-movies">
                         <h1>{dataSuccessMovie.title}</h1>
                         <h3>{dataSuccessMovie.overview}</h3>
                         <div className="details-details">
                             <button className="btn-addToFavorites" onClick={handleFavorites}><h3>{star}</h3></button>
                             <div className="details-releaseDate">
-                                <h5>{dataSuccessMovie.release_date}</h5>
+                                <h5>Release Date: {dataSuccessMovie.release_date}</h5>
                             </div>
                                 <div className="div-generes-details">
-                                    <h5>GENERES:</h5>
                                     {dataSuccessMovie.genres && (dataSuccessMovie.genres.map((genre, index) => (
                                             <ul key={index}> 
                                                 <li>
@@ -119,14 +118,16 @@ export default function DetailsMovie(){
                         </div>
                     </div>
                 </div>
-                <div className="links-details">
-                    <a href={dataSuccessMovie.homepage} className="homepage-link"><div>
-                        <h2 style={{color: '#fff'}}>HOMEPAGE</h2>
-                    </div></a>
-                    <Link to={`/movies/${dataSuccessMovie.id}/credits`} className="credits-link"><div>
+            </div>
+            <div className="links-details">
+                <a href={dataSuccessMovie.homepage} className="homepage-link"><div>
+                    <h2 style={{color: '#fff'}}>HOMEPAGE</h2>
+                </div></a>
+                <Link to={`/movies/${dataSuccessMovie.id}/credits`} className="credits-link">
+                    <div>
                         <h2 style={{color: '#fff'}}>CREDITS</h2>
-                    </div></Link>
-                </div>
+                    </div>
+                </Link>
             </div>
             <div className="reviews">
                 <h1>Reviews</h1>

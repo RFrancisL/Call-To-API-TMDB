@@ -12,7 +12,6 @@
 .prevButton, .nextButton{
     width: 70px;
     height: 30px;
-    margin: 10px;
     background-color: #181818;
     border: 1px solid #181818;
     border-radius: 10px;
@@ -23,14 +22,12 @@
     content: "\226B";
     display: inline-block;
     font-size: 30px;
-    margin-right: 5px; /* Ajusta el margen según tus necesidades */
   }
 
 .prevButton::before{
     content: "\226A";
     display: inline-block;
     font-size: 30px;
-    margin-right: 5px; 
 }
 
 .prevButton:hover::before, .nextButton:hover::before{

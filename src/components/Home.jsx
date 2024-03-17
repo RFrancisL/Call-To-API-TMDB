@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { AUTH } from "../App"
 import '../home.css' 
 import useFetch from "./useFetchs";
-import RequestToken from "./login/requestToken";
 
 function Carrousel({ item, renderItem }) {
     const [currentPosition, setCurrentPosition] = useState(0);
@@ -25,7 +23,7 @@ function Carrousel({ item, renderItem }) {
         // Limpiar el intervalo cuando el componente se desmonta
         clearInterval(intervalId);
       };
-    }, [currentPosition, item.length]);
+    }, [currentPosition]);
   
     return (
       <div>
@@ -37,17 +35,11 @@ function Carrousel({ item, renderItem }) {
   }
 
 function GetImagesMovie(){
-  const {success, loading, error} = useFetch('https://api.themoviedb.org/3/movie/popular')
+  const {success} = useFetch('https://api.themoviedb.org/3/movie/popular')
 
-  if(loading){
-    return <h1>LOADING...</h1>
-  }
+  const allSuccess = success || []
+  const movies = allSuccess.results
 
-  if(error){
-    return <h1>{error}</h1>
-  }
-
-  const movies = success.results
   return (
     movies && (
       <Carrousel
@@ -66,17 +58,10 @@ function GetImagesMovie(){
 }
 
 function GetImagesSeries(){
-  const {success, loading, error} = useFetch('https://api.themoviedb.org/3/tv/popular')
+  const {success} = useFetch('https://api.themoviedb.org/3/tv/popular')
 
-  if(loading){
-    return <h1>LOADING...</h1>
-  }
-
-  if(error){
-    return<h1>{error}</h1>
-  }
-
-  const series = success.results
+  const allSuccess = success || []
+  const series = allSuccess.results
 
   return(
     series && (
@@ -98,16 +83,10 @@ function GetImagesSeries(){
 function GetUser(){
   const getIdUser = localStorage.getItem('user')
   const idUser = JSON.parse(getIdUser)
-  const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/account/${idUser}`)
+  const {success} = useFetch(`https://api.themoviedb.org/3/account/${idUser}`)
 
-  if(loading){
-    return <h1>LOADING...</h1>
-  }
+  const allSuccess = success || []
 
-  if(error){
-    return<h1>{error}</h1>
-  }
-  
   const USER = localStorage.getItem('user')
   const user = JSON.parse(USER)
 
@@ -116,9 +95,9 @@ function GetUser(){
   return(
     <nav className="nav-home">
       {USERVALUE === user.userName ?(
-        success.avatar && success.avatar.tmdb && success.avatar.tmdb.avatar_path &&(
+        allSuccess.avatar && allSuccess.avatar.tmdb && allSuccess.avatar.tmdb.avatar_path &&(
           <div className="div-nav-perfil">
-              <Link to={'/perfil'}><img src={`https://image.tmdb.org/t/p/w500${success.avatar.tmdb.avatar_path}`} className="btn-home-perfil"/></Link>
+              <Link to={'/perfil'}><img src={`https://image.tmdb.org/t/p/w500${allSuccess.avatar.tmdb.avatar_path}`} className="btn-home-perfil"/></Link>
             <h1 className="title-nav">WELCOME {USERVALUE}😋!</h1>
           </div>
         ) 

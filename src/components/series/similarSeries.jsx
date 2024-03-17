@@ -8,17 +8,10 @@ import useFetch from "../useFetchs"
 export default function SimilarSeries(){
     const { id } = useParams()
 
-    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/tv/${id}/similar`)
-
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
+    const {success} = useFetch(`https://api.themoviedb.org/3/tv/${id}/similar`)
     
-    const series = success.results || []
+    const allSuccess = success || []
+    const series = allSuccess.results || []
     return(
         <div>
             <div className="similar-div-semiglobal">

@@ -27,17 +27,10 @@ function CarrouselImages({ item, renderItem }) {
 export default function Images(){
     const { id } = useParams()
 
-    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/movie/${id}/images`)
-    
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
+    const {success} = useFetch(`https://api.themoviedb.org/3/movie/${id}/images`)
 
-    if(error){
-        return <h1>{error}</h1>
-    }
-    
-    const images = success.backdrops || []
+    const allSuccess = success || []
+    const images = allSuccess.backdrops || []
     
     return(
         <div>

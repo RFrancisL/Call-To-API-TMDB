@@ -3,17 +3,10 @@ import { Link } from "react-router-dom"
 import useFetch from "../useFetchs"
 export default function OnTheAir(){
 
-    const {success, loading, error} = useFetch('https://api.themoviedb.org/3/tv/on_the_air')
+    const {success} = useFetch('https://api.themoviedb.org/3/tv/on_the_air')
 
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
-
-    const series = success.results || []
+    const allSuccess = success || []
+    const series = allSuccess.results || []
     
     return (
         <div>

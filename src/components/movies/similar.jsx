@@ -8,17 +8,10 @@ import useFetch from "../useFetchs"
 export default function SimilarMovies(){
     const { id } = useParams()
 
-    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/movie/${id}/similar`)
+    const {success} = useFetch(`https://api.themoviedb.org/3/movie/${id}/similar`)
 
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
-    
-    const movies = success.results || []
+    const allSuccess = success || []
+    const movies = allSuccess.results || []
     console.log(movies)
     return(
         <div>

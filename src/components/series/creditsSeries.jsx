@@ -21,7 +21,6 @@ export default function CreditsSeries(){
                 return res.json()
             })
             .then((data)=>{
-                    console.log(data.cast)
                     const uniqueActor = [];
                    
                     data.cast.forEach((act) => {

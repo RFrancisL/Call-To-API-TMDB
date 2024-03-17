@@ -4,17 +4,10 @@ import useFetch from "../useFetchs"
 export default function ReviewsSeries(){
     const { id } = useParams()
 
-    const {success, loading, error} = useFetch(`https://api.themoviedb.org/3/tv/${id}/reviews`)
+    const {success} = useFetch(`https://api.themoviedb.org/3/tv/${id}/reviews`)
 
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
-    
-    const reviews = success.results || []
+    const allSuccess = success || []
+    const reviews = allSuccess.results || []
     console.log(reviews)
     return (
         <div className="global-reviews">

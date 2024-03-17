@@ -6,17 +6,10 @@ import '../movies/styles/nowPlaying.css'
 import useFetch from "../useFetchs"
 
 export default function TopRated(){
-    const {success, loading, error} = useFetch('https://api.themoviedb.org/3/movie/top_rated')
+    const { success } = useFetch('https://api.themoviedb.org/3/movie/top_rated')
 
-    if(loading){
-        return <h1>LOADING...</h1>
-    }
-
-    if(error){
-        return <h1>{error}</h1>
-    }
-
-    const movies = success.results || []
+    const allSuccess = success || []
+    const movies = allSuccess.results || []
 
     return(
         <div>

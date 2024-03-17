@@ -1,184 +1,181 @@
+:root {
+  --dark-background: #181818;
+  --light-background: #303030;
+  --accent-color: #007BFF;
+  --hover-green: rgb(21, 123, 21);
+  --hover-red: rgb(192, 8, 8);
+}
 
-  
-  .details-movie{
-    display: flex;
-    margin: auto;
-    border: 1px solid #303030;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: #181818;
-  }
+.details-movie {
+  display: flex;
+  margin: auto;
+  margin-right: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 
-  .image-perfi-details{
-    width: max-content;
-    height: max-content;
-    margin: 20px;
-  }
+.details-info-movies {
+  margin: auto;
+  padding-right: 10px;
+}
 
-  .info-details{
-    padding: 50px;
-  }
-  .info-details h1 {
-    font-size: 70px;
-    color: #f1f1f1;
-  }
+.image-perfi-details {
+  width: max-content;
+  height: max-content;
+  margin: 20px;
+}
 
-  .info-details h3 {
-    font-size: 30px;
-    color: #adacac;
-    margin: 0px;
-  }
+.info-details {
+  padding: 50px;
+  background-color: var(--dark-background);
+  border: 1px solid var(--light-background);
+  margin-right: 10px;
+  border-radius: 20px;
+}
 
-  .info-details h5 {
-    font-size: 15px;
-  }
-  .details-details{
-    display: flex;
-    justify-content: space-around;
-    color: #adacac;
-    align-items: center;
-  }
+.info-details h1 {
+  font-size: 70px;
+  color: #f1f1f1;
+}
 
-  .div-generes-details{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.info-details h3 {
+  font-size: 30px;
+  color: #adacac;
+  margin: 0;
+}
 
-  .info-details a {
-    text-decoration: none;
-    color: #007BFF;
-  }
+.info-details h5 {
+  font-size: 15px;
+}
 
-  .links-details{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-around;
-  }
+.details-details {
+  display: flex;
+  justify-content: space-around;
+  color: #adacac;
+  align-items: center;
+  padding-right: 10px;
+}
 
-  .homepage-link{
-    border: 1px solid #181818;
-    border-radius: 20px;
-    padding-left: 17%;
-    padding-right: 17%;
-    background-color: #181818;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
-  .credits-link{
-    border: 1px solid #181818;
-    border-radius: 20px;
-    padding-left: 17%;
-    padding-right: 17%;
-    background-color: #181818;
-    color:#adacac;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
-  .Image-details{
-    text-align: center;
-  }
+.div-generes-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .reviews{
-    background-color: #181818;
-    padding: 10px;
-    margin-bottom: 50px;
-    border-radius: 20px;
-    text-align:center;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
+.info-details a {
+  text-decoration: none;
+  color: var(--accent-color);
+}
 
-  .similar-movies{
-    background-color: #181818;
-    padding: 10px;
-    border-radius: 20px;
-    text-align:center;
-    margin: auto;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
+.links-details {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-around;
+}
 
-  .watch-providers{
-    background-color: #181818;
-    padding: 10px;
-    margin-top: 50px;
-    border-radius: 20px;
-    text-align:center;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
+.homepage-link{
+  background-color: var(--dark-background);
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: box-shadow 0.3s ease;
+  animation: borderAnimation 2s infinite;
+}
 
-  .recommendations-series{
-    background-color: #181818;
-    padding: 10px;
-    margin-top: 50px;
-    border-radius: 20px;
-    text-align:center;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-  }
-  .btn-show-more{
-    color: #f1f1f1;
-    background-color: #181818;
-    border: 1px solid #303030;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 5px;
-  }
+.credits-link{
+  background-color: var(--dark-background);
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: box-shadow 0.3s ease;
+  animation: borderAnimation 2s infinite;
+}
 
-  .btn-show-less{
-    color: #f1f1f1;
-    background-color: #181818;
-    border: 1px solid #303030;
-    border-radius: 5px;
-    font-size: 15px;
-    padding: 5px;
-  }
+.btn-common {
+  border: 1px solid var(--dark-background);
+  border-radius: 20px;
+  padding-left: 17%;
+  padding-right: 17%;
+  background-color: var(--dark-background);
+  transition: box-shadow 0.3s ease;
+  animation: borderAnimation 2s infinite;
+}
 
-  .btn-show-less:hover{
-    background-color: rgb(192, 8, 8);
-  }
-  .btn-show-more:hover{
-    background-color: rgb(21, 123, 21);
-  }
+.btn-show-more,
+.btn-show-less,
+.btn-addToFavorites {
+  color: #f1f1f1;
+  font-size: 15px;
+  padding: 5px;
+}
 
-  @keyframes borderAnimation {
-    0% {
-        -webkit-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
-        -moz-box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
-        box-shadow:0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
-    }
-    25% {
-        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
-        -moz-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
-        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
-    }
-    50% {
-        -webkit-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5); /* Neon Orchid */
-        -moz-box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
-        box-shadow:0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
-    }
-    75% {
-        -webkit-box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5); /* Neon Dodger Blue */
-        -moz-box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
-        box-shadow:0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
-    }
-    100% {
-        -webkit-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5); /* Neon Red-Orange */
-        -moz-box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
-        box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
-    }
+.btn-show-more:hover {
+  background-color: var(--hover-green);
+}
+
+.btn-show-less:hover {
+  background-color: var(--hover-red);
 }
 
 
-  .btn-addToFavorites{
-    width: 100px;
-    height: 50px;
-    border: #181818;
-    border-radius: 20px;
-    background-color: #181818;
-    transition: box-shadow 0.3s ease; 
-    animation: borderAnimation 2s infinite;
-    cursor: pointer;
+@keyframes borderAnimation {
+  0% {
+    box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
   }
+  25% {
+    box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0.5px 0 0 2.5px rgba(218, 112, 214, 0.5);
+  }
+  75% {
+    box-shadow: 0.5px 0 0 2.5px rgba(30, 144, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0.5px 0 0 2.5px rgba(255, 69, 0, 0.5);
+  }
+}
+
+.btn-addToFavorites {
+  width: 50px;
+  height: 45px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  animation: borderAnimation 2s infinite;
+}
+
+.reviews,
+.similar-movies,
+.watch-providers,
+.recommendations-series {
+  background-color: var(--dark-background);
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 50px;
+  transition: box-shadow 0.3s ease;
+  animation: borderAnimation 2s infinite;
+}
+
+.btn-show-more,
+.btn-show-less {
+  color: #f1f1f1;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.btn-show-more:hover {
+  background-color: var(--hover-green);
+}
+
+.btn-show-less:hover {
+  background-color: var(--hover-red);
+}
